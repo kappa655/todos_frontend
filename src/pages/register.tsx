@@ -1,14 +1,16 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
+import { API_URL } from "../config"
 
 export function Register_page() {
     const navigate = useNavigate()
     const reg_form = {username : "", password : "", email : ""}
     const [reg_data, set_reg_data] = useState(reg_form) 
+    
 
     async function Register() {
-        const response = await fetch("http://localhost:8000/register", {
+        const response = await fetch(`${API_URL}/register`, {
             method : "POST",
             headers : {
                 "Content-Type" : "application/json"

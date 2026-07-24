@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { toast } from 'react-toastify' 
+import { API_URL } from "../config"
 
 export function Login_page({ onLoginSuccess }: { onLoginSuccess: () => void }) {
     const navigate = useNavigate()
@@ -8,7 +9,7 @@ export function Login_page({ onLoginSuccess }: { onLoginSuccess: () => void }) {
     const [login_data, set_login_data] = useState(login_form)
 
     async function Login() {
-        const response = await fetch("http://localhost:8000/login", {
+        const response = await fetch(`${API_URL}/login`, {
             method : 'POST',
             headers : {
                 'Content-Type': 'application/json'

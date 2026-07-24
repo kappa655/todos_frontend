@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate} from 'react-router-dom'
 import { toast } from 'react-toastify';
+import { API_URL } from "../config"
 
 
 type Todo = {
@@ -29,7 +30,7 @@ export function GetTodos_page() {
             navigate("/login")
             return
         }
-        const response = await fetch("http://localhost:8000/todos", {
+        const response = await fetch(`${API_URL}/todos`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -56,7 +57,7 @@ export function GetTodos_page() {
             navigate("/login")
             return
         }
-        const response = await fetch("http://localhost:8000/create_todo", {
+        const response = await fetch(`${API_URL}/create_todo`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -81,7 +82,7 @@ export function GetTodos_page() {
             navigate("/login")
             return
         }
-        const response = await fetch(`http://localhost:8000/todos/${id}`, {
+        const response = await fetch(`${API_URL}/todos/${id}`, {
             method: 'PATCH',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -106,7 +107,7 @@ export function GetTodos_page() {
             navigate("/login")
             return
         }
-        const response = await fetch(`http://localhost:8000/todos/${id}`, {
+        const response = await fetch(`${API_URL}/todos/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`

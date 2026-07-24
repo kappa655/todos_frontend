@@ -6,6 +6,7 @@ import { Login_page } from './pages/login'
 import { GetTodos_page } from './pages/todos'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { API_URL } from "./config"
 
 export default function App() {
   const [logged_in, set_logged_in] = useState(false)
@@ -30,7 +31,7 @@ export default function App() {
 
       // Στέλνουμε αίτημα στο backend για να δούμε αν το token είναι ακόμα έγκυρο
       try {
-        const response = await fetch("http://localhost:8000/todos", {
+        const response = await fetch(`${API_URL}/todos`, {
           method: "GET",
           headers: {
             "Authorization": `Bearer ${token}`

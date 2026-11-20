@@ -21,7 +21,6 @@ It provides user registration, login, and a protected Todos page where authentic
 
 - User registration and login flows
 - Token-based authentication stored in localStorage (key: `token`)
-- Protected `/todos` route (redirects to login when unauthenticated)
 - Fetch, create, update, complete/uncomplete, and delete todos
 - Toast notifications for user feedback
 - Simple, responsive UI styles using CSS
@@ -31,21 +30,6 @@ It provides user registration, login, and a protected Todos page where authentic
 ## Tech stack
 
 - React (TypeScript)
-- Vite
-- react-router-dom (routing)
-- react-toastify (notifications)
-- ESLint + TypeScript for linting/type checking
-
-Dependencies in package.json:
-- react, react-dom, react-router-dom, react-toastify
-Dev dependencies:
-- vite, typescript, @vitejs/plugin-react, eslint, and related typings/plugins
-
-Scripts from package.json:
-- `npm run dev` — start dev server (vite)
-- `npm run build` — run TypeScript build then `vite build`
-- `npm run preview` — preview production build
-- `npm run lint` — run eslint
 
 ---
 
@@ -54,15 +38,11 @@ Scripts from package.json:
 - index.html — Vite entry HTML
 - vite.config.ts — Vite configuration
 - package.json / package-lock.json
-- public/
-  - favicon.svg
-  - icons.svg
 - src/
   - main.tsx — React entry point
   - App.tsx — main app component (navigation, route guarding, ToastContainer)
   - config.ts — API URL configuration
   - App.css, index.css — styles
-  - assets/ — hero.png, react.svg, vite.svg
   - pages/
     - register.tsx — registration page/form
     - login.tsx — login page/form

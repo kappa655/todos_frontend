@@ -1,6 +1,6 @@
 # Todos Frontend
 
-React + TypeScript frontend for a Todo application built with Vite.  
+React + TypeScript frontend for a Todo application.  
 It provides user registration, login, and a protected Todos page where authenticated users can create, update, complete, and delete todos.
 
 
